@@ -96,3 +96,13 @@
 .texy-html {color: #66aa66;}
 .texy-text {color: #6666aa;}
 .texy-err {background-color: #ff0000; color: #ffffff;}
+
+/* Latte */
+.latte-tag {color: #f00; font-weight: bold;}
+.latte-nattr {color: orange; font-weight: bold;}
+.latte-nattr-in {color: #0f0;}
+.latte-comment {color: gray;}
+.latte-macro {color: #a52a2a; font-weight: bold;}
+.latte-macro-value {color: #a52a2a;}
+.latte-macro-modifiers-delim {color:#0033cc;font-weight: bold;}
+.latte-macro-modifiers {color:#008b8b;}

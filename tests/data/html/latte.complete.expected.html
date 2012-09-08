@@ -1,0 +1,213 @@
+<html><head><meta http-equiv="content-type" content="text/html; charset=utf-8" /><link rel="stylesheet" type="text/css" href="../../../style.css" media="all" /></head><body><pre>
+<span class="html-tag">&lt;!DOCTYPE</span><span class="html-tagin"> html PUBLIC </span><span class="html-quote">&quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot;</span><span class="html-tagin"> </span><span class="html-quote">&quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;</span><span class="html-tag">&gt;</span>
+
+<span class="html-tag">&lt;ul&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Escaped: <span class="latte-tag">{</span><span class="latte-macro-value">$hello</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Non-escaped: <span class="latte-tag">{</span><span class="latte-macro">!</span><span class="latte-macro-value">$hello</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Escaped expression: <span class="latte-tag">{</span><span class="latte-macro">=</span><span class="latte-macro-value">'&lt;' . 'b' . '&gt;hello' . '&lt;/b&gt;'</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Non-escaped expression: <span class="latte-tag">{</span><span class="latte-macro">!=</span><span class="latte-macro-value">'&lt;' . 'b' . '&gt;hello' . '&lt;/b&gt;'</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Array access: <span class="latte-tag">{</span><span class="latte-macro-value">$people[1]</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Html: <span class="latte-tag">{</span><span class="latte-macro-value">$el</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Translated: <span class="latte-tag">{</span><span class="latte-macro">_</span><span class="latte-macro-value">$people[1]</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Translated string: <span class="latte-tag">{</span><span class="latte-macro">_</span><span class="latte-macro-value">ahoj</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Non-escaped and translated: <span class="latte-tag">{</span><span class="latte-macro">!_</span><span class="latte-macro-value">$people[1]</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Condition: <span class="latte-tag">{</span><span class="latte-macro-value">$hello ? yes</span><span class="latte-tag">}</span> <span class="latte-tag">{</span><span class="latte-macro">=</span><span class="latte-macro-value">$hello ? yes</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span>Array: <span class="latte-tag">{</span><span class="latte-macro-value">$hello ? [a, b, c]</span><span class="latte-macro-modifiers-delim">|</span><span class="latte-macro-modifiers">join</span><span class="latte-tag">}</span> <span class="latte-tag">{</span><span class="latte-macro">=</span><span class="latte-macro-value">[a, b, $hello ? c]</span><span class="latte-macro-modifiers-delim">|</span><span class="latte-macro-modifiers">join</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;input/&gt;</span> <span class="html-tag">&lt;input</span><span class="html-tagin"> </span><span class="html-tag">/&gt;</span> <span class="html-tag">&lt;input&gt;</span>
+
+<span class="html-tag">&lt;input</span><span class="html-tagin"> checked</span><span class="html-tag">&gt;</span> <span class="html-tag">&lt;input</span><span class="html-tagin"> checked=</span><span class="html-quote">&quot;checked&quot;</span><span class="html-tag">&gt;</span>
+
+{ test} <span class="latte-tag">{&quot;</span><span class="latte-macro">test</span><span class="latte-tag">}</span> <span class="latte-tag">{'</span><span class="latte-macro">test</span><span class="latte-tag">}</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:attr=</span><span class="latte-nattr-in">&quot;title =&gt; $hello, lang =&gt; isset($lang) ? $lang&quot;</span><span class="html-tag">&gt;</span> <span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> val = </span><span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-macro-value"> true</span><span class="latte-tag">}</span>&quot;a&quot;<span class="latte-tag">{</span><span class="latte-macro">else</span><span class="latte-tag">}</span>&quot;b&quot;<span class="latte-tag">{</span><span class="latte-macro">/if</span><span class="latte-tag">}</span>&gt; <span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> val0 val1 = tmp val2=tmp val3=</span><span class="html-quote">&quot;x&quot;</span><span class="html-tag">/&gt;</span> <span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> val = </span><span class="latte-tag">{</span><span class="latte-macro-value">$xss</span><span class="latte-tag">}</span>&gt; <span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> val = </span><span class="html-tag">/&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$xss</span><span class="latte-tag">}</span><span class="html-tag">&lt;/p&gt;</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">=</span><span class="latte-macro-value"> (string) (bool) (float) (int) (array) 10</span><span class="latte-tag">}</span>
+
+<span class="latte-tag">{</span><span class="latte-comment">* comment *</span><span class="latte-tag">}</span>
+
+<span class="latte-tag">{</span><span class="latte-comment">* multi {inner} {inner}
+line
+comment *</span><span class="latte-tag">}</span>
+
+
+<span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-macro-value"> $hello</span><span class="latte-tag">}</span>
+	<span class="latte-tag">{</span><span class="latte-macro-value">$hello</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">elseif</span><span class="latte-macro-value"> $any</span><span class="latte-tag">}</span>
+	<span class="latte-tag">{</span><span class="latte-macro-value">$any</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">else</span><span class="latte-tag">}</span>
+	none
+<span class="latte-tag">{/}</span>
+
+
+<span class="latte-tag">{</span><span class="latte-macro">foreach</span><span class="latte-macro-value"> array(TRUE) as $foo</span><span class="latte-tag">}</span>
+	<span class="latte-tag">{</span><span class="latte-macro">foreach</span><span class="latte-macro-value"> $people as $person</span><span class="latte-tag">}</span>
+	<span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-macro-value"> $iterator-&gt;isFirst()</span><span class="latte-tag">}</span><span class="html-tag">&lt;ul&gt;</span><span class="latte-tag">{</span><span class="latte-macro">/if</span><span class="latte-tag">}</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> id=</span><span class="html-quote">&quot;item-{$iterator-&gt;getCounter()}&quot;</span><span class="html-tagin"> class=</span><span class="html-quote">&quot;{$iterator-&gt;isOdd() ? 'odd' : 'even'}&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$person</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-macro-value"> $iterator-&gt;isLast()</span><span class="latte-tag">}</span><span class="html-tag">&lt;/ul&gt;</span><span class="latte-tag">{</span><span class="latte-macro">/if</span><span class="latte-tag">}</span>
+	<span class="latte-tag">{</span><span class="latte-macro">/foreach</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">/foreach</span><span class="latte-tag">}</span>
+
+
+
+<span class="html-tag">&lt;style</span><span class="html-tagin"> type=</span><span class="html-quote">&quot;text/css&quot;</span><span class="html-tag">&gt;</span>
+&lt;!--
+<span class="css-id">#</span>{$<span class="css-property">xss</span>} {
+	<span class="css-property">background</span>:<span class="css-value"> blue</span>;
+}
+--&gt;
+<span class="html-tag">&lt;/style&gt;</span>
+
+
+
+<span class="html-tag">&lt;script&gt;</span><span class="js-out">
+&lt;!--
+alert(</span><span class="js-quote">'&lt;/div&gt;'</span><span class="js-out">);
+
+</span><span class="js-keywords1">var</span><span class="js-out"> prop = {$people};
+
+</span><span class="js-keywords2">document</span><span class="js-out">.</span><span class="js-keywords2">getElementById</span><span class="js-out">({$xss}).style.backgroundColor = </span><span class="js-quote">'red'</span><span class="js-out">;
+
+</span><span class="js-keywords1">var</span><span class="js-out"> html = {$el};
+--&gt;
+</span><span class="html-tag">&lt;/script&gt;</span>
+
+
+<span class="html-tag">&lt;script&gt;</span><span class="js-out">
+</span><span class="js-comment">/* &lt;![CDATA[ */</span><span class="js-out">
+
+</span><span class="js-keywords1">var</span><span class="js-out"> prop2 = {$people};
+
+</span><span class="js-comment">/* ]]&gt; */</span><span class="js-out">
+</span><span class="html-tag">&lt;/script&gt;</span>
+
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> onclick =
+</span><span class="html-quote">'alert({$xss});alert(&quot;hello&quot;);'</span><span class="html-tagin">
+ title=</span><span class="html-quote">'{$xss}'</span><span class="html-tagin">
+ style =
+ </span><span class="html-quote">&quot;color:{$xss};&quot;</span><span class="html-tagin">
+ rel=</span><span class="html-quote">&quot;{$xss}&quot;</span><span class="html-tagin">
+ onblur=</span><span class="html-quote">&quot;alert({$xss})&quot;</span><span class="html-tagin">
+ alt=</span><span class="html-quote">'{$el}'</span><span class="html-tagin">
+ onfocus=</span><span class="html-quote">&quot;alert({$el})&quot;</span><span class="html-tagin">
+</span><span class="html-tag">&gt;</span>click on me <span class="latte-tag">{</span><span class="latte-macro-value">$xss</span><span class="latte-tag">}</span><span class="html-tag">&lt;/p&gt;</span>
+
+
+
+<span class="latte-tag">{</span><span class="latte-macro">var</span><span class="latte-macro-value"> $counter = 0</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">block</span><span class="latte-macro-value"> #menu</span><span class="latte-tag">}</span>
+<span class="html-tag">&lt;ul&gt;</span>
+	<span class="latte-tag">{</span><span class="latte-macro">foreach</span><span class="latte-macro-value"> $menu as $item</span><span class="latte-tag">}</span>
+	<span class="html-tag">&lt;li&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$counter++</span><span class="latte-tag">}</span> <span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-macro-value"> is_array($item)</span><span class="latte-tag">}</span> <span class="latte-tag">{</span><span class="latte-macro">include</span><span class="latte-macro-value"> #this, 'menu' =&gt; $item</span><span class="latte-tag">}</span> <span class="latte-tag">{</span><span class="latte-macro">else</span><span class="latte-tag">}{</span><span class="latte-macro-value">$item</span><span class="latte-tag">}{</span><span class="latte-macro">/if</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+	<span class="latte-tag">{</span><span class="latte-macro">/foreach</span><span class="latte-tag">}</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+<span class="latte-tag">{</span><span class="latte-macro">/block</span><span class="latte-tag">}</span>
+
+
+<span class="latte-tag">{</span><span class="latte-macro">default</span><span class="latte-macro-value"> $varx = 2</span><span class="latte-tag">}{</span><span class="latte-macro-value">$varx</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">default</span><span class="latte-macro-value"> varx =&gt; 4</span><span class="latte-tag">}{</span><span class="latte-macro-value">$varx</span><span class="latte-tag">}</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">var</span><span class="latte-macro-value"> varx =&gt; 8</span><span class="latte-tag">}{</span><span class="latte-macro-value">$varx</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">var</span><span class="latte-macro-value"> $varx =&gt; 9</span><span class="latte-tag">}{</span><span class="latte-macro-value">$varx</span><span class="latte-tag">}</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">var</span><span class="latte-macro-value"> $now = new DateTime</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">var</span><span class="latte-macro-value"> $foo = $now-&gt;format('u')</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">default</span><span class="latte-macro-value"> $foo = $now-&gt;format('u')</span><span class="latte-tag">}</span>
+
+<span class="html-comment">&lt;!-- </span><span class="latte-tag">{</span><span class="latte-macro-value">$comment</span><span class="latte-tag">}</span> --&gt;
+
+
+<span class="html-tag">&lt;/ul&gt;</span>
+
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;foreach&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> </span><span class="latte-nattr">n:foreach=</span><span class="latte-nattr-in">&quot;$people as $person&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$person</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;for&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> </span><span class="latte-nattr">n:for=</span><span class="latte-nattr-in">&quot;$i=0;$i&lt;3;$i++&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$i</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;white&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> </span><span class="latte-nattr">n:while=</span><span class="latte-nattr-in">&quot;--$i&gt;0&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$i</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;div&gt;&lt;p&gt;</span>true<span class="html-tag">&lt;/div&gt;</span>
+<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;div&gt;&lt;p&gt;</span>true<span class="html-tag">&lt;/p&gt;&lt;/div&gt;</span>
+<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;false&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;div&gt;&lt;p&gt;</span>false<span class="html-tag">&lt;/div&gt;</span>
+<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;false&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;div&gt;&lt;p&gt;</span>false<span class="html-tag">&lt;/p&gt;&lt;/div&gt;</span>
+<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;strlen('{$xss}') &gt; 5&quot;</span><span class="html-tag">&gt;</span>noLatte<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;if + foreach&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;strlen($person)===4&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:foreach=</span><span class="latte-nattr-in">&quot;$people as $person&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$person</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;if + inner-if + inner-foreach&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;empty($iterator)&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-if=</span><span class="latte-nattr-in">&quot;strlen($person)===4&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-foreach=</span><span class="latte-nattr-in">&quot;$people as $person&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$person</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;inner-if + inner-foreach&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-if=</span><span class="latte-nattr-in">&quot;strlen($person)===4&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-foreach=</span><span class="latte-nattr-in">&quot;$people as $person&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$person</span><span class="latte-macro-modifiers-delim">|</span><span class="latte-macro-modifiers">lower</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;ul</span><span class="html-tagin"> title=</span><span class="html-quote">&quot;block + if + foreach&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:block=</span><span class="latte-nattr-in">&quot;#bl&quot;</span><span class="html-tag">&gt;</span>
+	<span class="html-tag">&lt;li</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;strlen($person)===4&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:foreach=</span><span class="latte-nattr-in">&quot;$people as $person&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$person</span><span class="latte-tag">}</span><span class="html-tag">&lt;/li&gt;</span>
+<span class="html-tag">&lt;/ul&gt;</span>
+
+<span class="html-tag">&lt;b</span><span class="html-tagin"> </span><span class="latte-nattr">n:tag-if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tag">&gt;</span>bold<span class="html-tag">&lt;/b&gt;</span> <span class="html-tag">&lt;b</span><span class="html-tagin"> </span><span class="latte-nattr">n:tag-if=</span><span class="latte-nattr-in">&quot;false&quot;</span><span class="html-tag">&gt;</span>normal<span class="html-tag">&lt;/b&gt;</span>
+
+<span class="html-tag">&lt;b</span><span class="html-tagin"> </span><span class="latte-nattr">n:tag-if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:class=</span><span class="latte-nattr-in">&quot;first&quot;</span><span class="html-tag">&gt;</span>bold<span class="html-tag">&lt;/b&gt;</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">?
+
+</span><span class="latte-macro-value">	echo 'test'
+
+</span><span class="latte-tag">}</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">l</span><span class="latte-tag">}</span> <span class="latte-tag">{</span><span class="latte-macro">r</span><span class="latte-tag">}</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:class=</span><span class="latte-nattr-in">&quot;foo, (false ? first), odd, ($hello ? foo : bar)&quot;</span><span class="html-tag">&gt;</span>n:class<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:class=</span><span class="latte-nattr-in">&quot;false ? first&quot;</span><span class="html-tag">&gt;</span>n:class empty<span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;meta&gt;</span>
+<span class="html-tag">&lt;meta</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tag">&gt;</span>
+<span class="html-tag">&lt;meta</span><span class="html-tagin"> </span><span class="latte-nattr">n:tag-if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tag">&gt;</span>
+<span class="html-tag">&lt;meta</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-if=</span><span class="latte-nattr-in">&quot;true&quot;</span><span class="html-tag">&gt;</span>
+<span class="html-tag">&lt;meta&gt;</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-tag">}</span>TRUE<span class="latte-tag">{</span><span class="latte-macro">/if</span><span class="latte-macro-value"> TRUE</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-tag">}</span>FALSE<span class="latte-tag">{</span><span class="latte-macro">/if</span><span class="latte-macro-value"> FALSE</span><span class="latte-tag">}</span>
+<span class="latte-tag">{</span><span class="latte-macro">if</span><span class="latte-tag">}</span>TRUE<span class="latte-tag">{</span><span class="latte-macro">else</span><span class="latte-tag">}</span>FALSE<span class="latte-tag">{</span><span class="latte-macro">/if</span><span class="latte-macro-value"> TRUE</span><span class="latte-tag">}</span>
+
+<span class="latte-tag">{</span><span class="latte-macro">foreach</span><span class="latte-macro-value"> [1,2,3] as $foo</span><span class="latte-tag">}</span>
+	<span class="html-tag">&lt;b</span><span class="html-tagin"> </span><span class="latte-nattr">n:class=</span><span class="latte-nattr-in">&quot;$iterator-&gt;even ? even&quot;</span><span class="html-tag">&gt;</span>item<span class="html-tag">&lt;/b&gt;</span>
+<span class="latte-tag">{</span><span class="latte-macro">/foreach</span><span class="latte-tag">}</span>
+
+<span class="html-tag">&lt;p</span><span class="html-tagin"> </span><span class="latte-nattr">n:foreach=</span><span class="latte-nattr-in">&quot;[1, 2, 3] as $foo&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:class=</span><span class="latte-nattr-in">&quot;$iterator-&gt;even ? even&quot;</span><span class="html-tag">&gt;</span><span class="latte-tag">{</span><span class="latte-macro-value">$foo</span><span class="latte-tag">}</span><span class="html-tag">&lt;/p&gt;</span>
+
+<span class="html-tag">&lt;span</span><span class="html-tagin"> </span><span class="latte-nattr">n:tag-if=</span><span class="latte-nattr-in">&quot;0&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:if=</span><span class="latte-nattr-in">&quot;1&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-if=</span><span class="latte-nattr-in">&quot;2&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:foreach=</span><span class="latte-nattr-in">&quot;[0] as $foo&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:tag-foreach=</span><span class="latte-nattr-in">&quot;[1] as $foo&quot;</span><span class="html-tagin"> </span><span class="latte-nattr">n:inner-foreach=</span><span class="latte-nattr-in">&quot;[2] as $foo&quot;</span><span class="html-tag">&gt;</span>Hello<span class="html-tag">&lt;/span&gt;</span>
+
+</pre></body></html>
